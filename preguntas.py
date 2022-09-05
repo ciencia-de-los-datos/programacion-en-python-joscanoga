@@ -195,13 +195,13 @@ def pregunta_06():
         for j in diccionarios:
             clave ,numero = j.split(":")
             if clave in min:
-                if min[clave] > numero:
-                    min[clave] = numero
-                elif max[clave] < numero:
-                    max[clave] = numero
+                if min[clave] > int(numero):
+                    min[clave] = int(numero)
+                elif max[clave] < int(numero):
+                    max[clave] = int(numero)
             else:
-                min[clave] = numero
-                max[clave] = numero
+                min[clave] = int(numero)
+                max[clave] = int(numero)
 
 
 
@@ -228,7 +228,8 @@ def pregunta_06():
     """
     lista=list(zip(min.keys(),min.values(),max.values()))
     lista.sort()
-    return  lista
+    return lista
+
 
 
 def pregunta_07():
@@ -237,7 +238,7 @@ def pregunta_07():
     diccionario=dict()
     for i in data:
         fila = i.replace("\t", " ").split()
-        clave=fila[1]
+        clave=int(fila[1])
         valor=fila[0]
         if clave not in diccionario:
             diccionario[clave]=[]
@@ -275,7 +276,7 @@ def pregunta_08():
     diccionario = dict()
     for i in data:
         fila = i.replace("\t", " ").split()
-        clave = fila[1]
+        clave = int(fila[1])
         valor = fila[0]
         if clave not in diccionario :
             diccionario[clave] = []
@@ -414,9 +415,8 @@ def pregunta_11():
 
 
     """
-    lista = list(zip(diccionario.keys(), diccionario.values()))
-    lista.sort()
-    return lista
+    diccionario = dict(sorted(diccionario.items()))
+    return diccionario
 
 
 def pregunta_12():
