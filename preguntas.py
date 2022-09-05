@@ -14,6 +14,11 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 
 
 def pregunta_01():
+    file=open("data.csv")
+    data=file.readlines()
+    suma=0
+    for i in data:
+        suma += int(i.replace("\t"," ").split()[1])
     """
     Retorne la suma de la segunda columna.
 
@@ -21,10 +26,23 @@ def pregunta_01():
     214
 
     """
-    return
+    return suma
 
 
 def pregunta_02():
+    file = open("data.csv")
+    data = file.readlines()
+    diccionario={
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D":0,
+        "E":0
+    }
+    for i in data:
+        aux=(i.replace("\t", " ").split()[0])
+        diccionario[aux] += 1
+
     """
     Retorne la cantidad de registros por cada letra de la primera columna como la lista
     de tuplas (letra, cantidad), ordendas alfabéticamente.
@@ -39,8 +57,8 @@ def pregunta_02():
     ]
 
     """
-    return
-
+    return list(zip(diccionario.keys(),diccionario.values()))
+#print(pregunta_02())
 
 def pregunta_03():
     """
