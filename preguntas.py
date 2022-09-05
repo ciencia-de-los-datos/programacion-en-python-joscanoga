@@ -453,4 +453,3 @@ def pregunta_12():
 
     """
     return diccionario
-print(pregunta_12())
